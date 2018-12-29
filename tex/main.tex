@@ -23,6 +23,8 @@
 \usepackage{lastpage}
 \graphicspath{ {./assets/} }
 \newcommand{\MYhref}[3][darktext]{\href{#2}{\color{#1}{#3}}}
+\let\orighref\href
+\renewcommand{\href}[2]{\orighref{#1}{#2\,\tiny\faExternalLink}}
 
 % Configure page margins with geometry
 \geometry{left=1.4cm, top=1.2cm, right=1.4cm, bottom=1.8cm, footskip=0.5cm}
@@ -43,13 +45,12 @@
 \email{eturkes@bu.edu}
 \homepage{eturkes.com}
 \github{eturkes}
-\linkedin{eturkes}
 
 \begin{document}
 \makecvheader[C]
 \makecvfooter
-    {\today}
-    {Emir Turkes~~~·~~~Brief Résumé}
+    {\href{https://github.com/eturkes/resume-eturkes}{\LaTeX\hspace{1mm}src}}
+    {Emir Turkes~~~·~~~\today}
     {\thepage\ of \pageref{LastPage} }
 
 % Content
